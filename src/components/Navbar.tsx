@@ -2,11 +2,13 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { HiMenu, HiX } from 'react-icons/hi'
+import { HiMenu, HiX, HiSun, HiMoon } from 'react-icons/hi'
+import { useTheme } from '@/contexts/ThemeContext'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const { theme, toggleTheme } = useTheme()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,7 +31,9 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white shadow-lg' : 'bg-transparent'
+        scrolled 
+          ? 'bg-white dark:bg-gray-900 shadow-lg' 
+          : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,19 +55,33 @@ export default function Navbar() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                  className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
                 >
                   {item.name}
                 </a>
               ))}
+              <button
+                onClick={toggleTheme}
+                className="ml-4 p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                aria-label="Toggle theme"
+              >
+                {theme === 'dark' ? <HiSun size={20} /> : <HiMoon size={20} />}
+              </button>
             </div>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile menu button and theme toggle */}
+          <div className="md:hidden flex items-center gap-2">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              aria-label="Toggle theme"
+            >
+              {theme === 'dark' ? <HiSun size={20} /> : <HiMoon size={20} />}
+            </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-primary focus:outline-none"
+              className="text-gray-700 dark:text-gray-300 hover:text-primary focus:outline-none"
             >
               {isOpen ? <HiX size={24} /> : <HiMenu size={24} />}
             </button>
@@ -77,7 +95,7 @@ export default function Navbar() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="md:hidden bg-white shadow-lg"
+          className="md:hidden bg-white dark:bg-gray-900 shadow-lg"
         >
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) => (
@@ -85,7 +103,7 @@ export default function Navbar() {
                 key={item.name}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="block px-3 py-2 text-gray-700 hover:text-primary rounded-md text-base font-medium"
+                className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary rounded-md text-base font-medium"
               >
                 {item.name}
               </a>

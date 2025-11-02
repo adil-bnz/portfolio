@@ -12,14 +12,14 @@ export default function Skills() {
   ]
 
   return (
-    <section id="skills" className="py-20 px-4 bg-gray-50">
+    <section id="skills" className="py-20 px-4 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl font-bold text-gray-900 mb-12 text-center"
+          className="text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center"
         >
           Compétences
         </motion.h2>
@@ -32,9 +32,9 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: catIndex * 0.1 }}
-              className="bg-white p-6 rounded-lg shadow-md"
+              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
             >
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
                 {category.title}
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -61,16 +61,16 @@ export default function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-white p-6 rounded-lg shadow-md"
+          className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
         >
-          <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
+          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 text-center">
             Langues
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {portfolioData.skills.languages_spoken.map((lang, index) => (
               <div key={index} className="text-center">
-                <p className="font-semibold text-gray-900">{lang.name}</p>
-                <p className="text-sm text-gray-600">{lang.level}</p>
+                <p className="font-semibold text-gray-900 dark:text-white">{lang.name}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">{lang.level}</p>
               </div>
             ))}
           </div>

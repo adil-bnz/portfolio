@@ -6,14 +6,14 @@ import { HiCode } from 'react-icons/hi'
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 px-4 bg-white">
+    <section id="projects" className="py-20 px-4 bg-white dark:bg-gray-800">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl font-bold text-gray-900 mb-12 text-center"
+          className="text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center"
         >
           Projets
         </motion.h2>
@@ -25,22 +25,22 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+              className="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
             >
               <div className="flex items-start gap-4 mb-4">
                 <HiCode className="text-3xl text-primary flex-shrink-0" />
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-gray-700 leading-relaxed mb-4">
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium"
+                        className="px-3 py-1 bg-primary/10 dark:bg-primary/20 text-primary rounded-full text-xs font-medium"
                       >
                         {tech}
                       </span>

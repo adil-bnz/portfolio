@@ -14,7 +14,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
             {portfolioData.personal.name}
           </h1>
           <motion.h2
@@ -29,7 +29,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg md:text-xl text-gray-600 mb-8"
+            className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8"
           >
             {portfolioData.personal.specialization}
           </motion.p>
@@ -43,19 +43,19 @@ export default function Hero() {
           >
             <a
               href={`mailto:${portfolioData.personal.email}`}
-              className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors"
+              className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors"
             >
               <HiMail className="text-xl" />
               <span className="text-sm">{portfolioData.personal.email}</span>
             </a>
             <a
               href={`tel:${portfolioData.personal.phone}`}
-              className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors"
+              className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors"
             >
               <HiPhone className="text-xl" />
               <span className="text-sm">{portfolioData.personal.phone}</span>
             </a>
-            <div className="flex items-center gap-2 text-gray-700">
+            <div className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
               <HiLocationMarker className="text-xl" />
               <span className="text-sm">{portfolioData.personal.location}</span>
             </div>

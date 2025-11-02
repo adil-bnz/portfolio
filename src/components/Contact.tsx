@@ -7,14 +7,14 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa'
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 px-4 bg-gray-50">
+    <section id="contact" className="py-20 px-4 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-4xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl font-bold text-gray-900 mb-12 text-center"
+          className="text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center"
         >
           Contact
         </motion.h2>
@@ -23,40 +23,40 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-white p-8 rounded-lg shadow-md"
+          className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md"
         >
           <div className="space-y-6">
             <a
               href={`mailto:${portfolioData.personal.email}`}
-              className="flex items-center gap-4 text-gray-700 hover:text-primary transition-colors group"
+              className="flex items-center gap-4 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors group"
             >
-              <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+              <div className="p-3 bg-primary/10 dark:bg-primary/20 rounded-lg group-hover:bg-primary/20 dark:group-hover:bg-primary/30 transition-colors">
                 <HiMail className="text-2xl text-primary" />
               </div>
               <div>
-                <p className="font-semibold">Email</p>
-                <p className="text-gray-600">{portfolioData.personal.email}</p>
+                <p className="font-semibold dark:text-white">Email</p>
+                <p className="text-gray-600 dark:text-gray-400">{portfolioData.personal.email}</p>
               </div>
             </a>
             <a
               href={`tel:${portfolioData.personal.phone}`}
-              className="flex items-center gap-4 text-gray-700 hover:text-primary transition-colors group"
+              className="flex items-center gap-4 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors group"
             >
-              <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+              <div className="p-3 bg-primary/10 dark:bg-primary/20 rounded-lg group-hover:bg-primary/20 dark:group-hover:bg-primary/30 transition-colors">
                 <HiPhone className="text-2xl text-primary" />
               </div>
               <div>
-                <p className="font-semibold">Téléphone</p>
-                <p className="text-gray-600">{portfolioData.personal.phone}</p>
+                <p className="font-semibold dark:text-white">Téléphone</p>
+                <p className="text-gray-600 dark:text-gray-400">{portfolioData.personal.phone}</p>
               </div>
             </a>
-            <div className="flex items-center gap-4 text-gray-700">
-              <div className="p-3 bg-primary/10 rounded-lg">
+            <div className="flex items-center gap-4 text-gray-700 dark:text-gray-300">
+              <div className="p-3 bg-primary/10 dark:bg-primary/20 rounded-lg">
                 <HiLocationMarker className="text-2xl text-primary" />
               </div>
               <div>
-                <p className="font-semibold">Localisation</p>
-                <p className="text-gray-600">{portfolioData.personal.location}</p>
+                <p className="font-semibold dark:text-white">Localisation</p>
+                <p className="text-gray-600 dark:text-gray-400">{portfolioData.personal.location}</p>
               </div>
             </div>
             <div className="flex gap-4 pt-4">
